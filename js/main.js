@@ -2,7 +2,6 @@
   const totalCompra = document.getElementById("total")
 
   let carrito = [];
-  console.log(carrito)
   if (localStorage.carrito != null) {
     carrito = JSON.parse(localStorage.carrito);
     carrito.forEach((carrito, index) => {
