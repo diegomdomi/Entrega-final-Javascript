@@ -194,7 +194,10 @@ function quitarCurso(miIndx) {
 
 /***Consumo de API Clima***/
 
-    $.getJSON("http://api.weatherunlocked.com/api/current/ar.R8400,-0.12?app_id=dfd05d5f&app_key=4fb61c73229358a83d4ddeab1a579714",function(res){
-    $("#clima").append (res.temp_c + "ºC");
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=bariloche,r8400,AR&appid=de7b968d1a14691c60fb4a04fa0ff60a",
+    function(res){
+    let temp = res.main.temp;
+    let tempCelsius = (temp - 273.15).toFixed(1)
+    $("#clima").append(tempCelsius + "ºC") ;
     })
-    $("#clima").css("color", "#a7467c","font-weight","bold","margin : 10px")
+    $("#clima").css("color", "#a7467c","font-weight","bold","margin : 10px");
